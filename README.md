@@ -1,4 +1,4 @@
-![image](https://github.com/user-attachments/assets/c18c802e-88a5-4eff-ab07-3bd843d04b38)# Virtualized Environment with Docker on AWS EC2
+# Virtualized Environment with Docker on AWS EC2
 
 To set up a containerized environment using Docker on an AWS EC2 instance. The container will run a simple service (e.g., Nginx web server) to showcase how to use Docker for virtualization
 
