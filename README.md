@@ -33,8 +33,9 @@ To set up a containerized environment using Docker on an AWS EC2 instance. The c
     sudo sh get-docker.sh
 ![image](https://github.com/user-attachments/assets/651a05a8-b6f7-494a-b2a0-67bed6775d18)
 
+---
 
-## Create a Dockerfile 
+### Create a Dockerfile 
 1. Create a directory to store the dockerfile and html file.
 2. The Dockerfile will define the environment and how to run the service inside the container.
 ![image](https://github.com/user-attachments/assets/9edce357-4028-4728-a8e3-0f3a3f0ca9af)
@@ -71,7 +72,7 @@ To set up a containerized environment using Docker on an AWS EC2 instance. The c
  
 ## Running Nginx Web Server
 
-1.   Once the container is running, open a web browser and go to the assigned public IP of the instance.
+1.   Once the container is running, open a web browser and go to the assigned public IP of the instance with port number.
 2.   You should see a page with the message "Welcome to the Dockerized Nginx Web Server!".
    
 - Note: **Stopping** and **Starting** the EC2 instance, will change the Public IP address . Be sure to obtain the new public IP address if you need to access the app again after a Start.
