@@ -2,7 +2,7 @@
 
 To set up a containerized environment using Docker on an AWS EC2 instance. The container will run a simple service (e.g., Nginx web server) to showcase how to use Docker for virtualization
 
-## Technologies Used
+## Prerequisites
 - AWS account with EC2 access
 - Docker installed on an AWS EC2 instance
 - Basic knowledge of using the terminal and Git
@@ -11,13 +11,14 @@ To set up a containerized environment using Docker on an AWS EC2 instance. The c
 ---
 
 ### Create an AWS EC2 Instance
-1.	Go to the AWS EC2 Dashboard.
-2.	Launch a new EC2 instance with the Ubuntu AMI .
+1. Go to the AWS EC2 Dashboard.
+2. Launch a new EC2 instance with the Ubuntu AMI .
 3. Choose the t2.micro instance type (eligible for the AWS free tier).
 4. Configure the security group:
       - Add inbound rules to allow access to:
          - HTTP (port 80) from specific IP address or range (e.g., 0.0.0.0/0 for open access, or x.x.x.x/32 for a specific IP).
          - HTTPS (port 443) from specific IP address or range.
+         - Custom TCP (port 8080) from specific IP address or range.
          - SSH (port 22) only from trusted IPs (e.g., your IP or a restricted range like x.x.x.x/32 to ensure secure access).
 5. Download the SSH key pair to connect to the EC2 instance securely.
 6. Connect to the instance using PuTTY with the downloaded SSH key pair.
@@ -52,34 +53,26 @@ To set up a containerized environment using Docker on an AWS EC2 instance. The c
    ```bash
    git remote add origin https://github.com/Shomeshwar-K/Docker-nginx.git
    git push -u origin main
-![image](https://github.com/user-attachments/assets/aeaa3493-2ebc-47b5-952c-033967c74028)
 
 ---
 
 ## Build and Run the Docker image
 
-- In the directory with Dockerfile run the following commands
-  ```bash
-  sudo docker build -t webserver-nginx .
-  sudo docker run -d -p 8080:80 --name docker
+1. In the directory with Dockerfile run the following commands
+   ```bash
+   sudo docker build -t webserver-nginx .
+   sudo docker run -d -p 8080:80 --name nginx-docker webserver-nginx
+2. Run the following coomand to check the docker container is running:
+   ```bash
+   sudo docker ps
 
 ![image](https://github.com/user-attachments/assets/721d38c4-be8d-456a-8c81-8166379a46d6)
 
-
-### Navigate to Web Directory 
-1.  Go to `/var/www/html`, the default directory for Apache.
-2.  Clone the above git repository.
-3.  Restart apache2  
-    ```bash
-    cd /var/www/html
-    git clone https://github.com/Shomeshwar-K/Deploy-a-Simple-Web-Application.git
-    sudo systemctl restart apache2
-![image](https://github.com/user-attachments/assets/9de5dbf0-e05b-46a8-8279-af126691400f)
-
+ 
 ## Running Nginx Web Server
 
-1.   Obtain the Public IP of Your EC2 Instance
-2.   Access the Web Server with the public IP address and the port number.
+1.   Once the container is running, open a web browser and go to the assigned public IP of the instance.
+2.   You should see a page with the message "Welcome to the Dockerized Nginx Web Server!".
    
 - Note: **Stopping** and **Starting** the EC2 instance, will change the Public IP address . Be sure to obtain the new public IP address if you need to access the app again after a Start.
 
