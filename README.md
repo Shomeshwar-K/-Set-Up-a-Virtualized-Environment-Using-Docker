@@ -1,5 +1,7 @@
 # Virtualized Environment with Docker on AWS EC2
 
+## Objective
+
 To set up a containerized environment using Docker on an AWS EC2 instance. The container will run a simple service (e.g., Nginx web server) to showcase how to use Docker for virtualization
 
 ## Prerequisites
