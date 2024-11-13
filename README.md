@@ -22,15 +22,17 @@ To set up a containerized environment using Docker on an AWS EC2 instance. The c
          - SSH (port 22) only from trusted IPs (e.g., your IP or a restricted range like x.x.x.x/32 to ensure secure access).
 5. Download the SSH key pair to connect to the EC2 instance securely.
 6. Connect to the instance using PuTTY with the downloaded SSH key pair.
+   
 ![image](https://github.com/user-attachments/assets/7eb06bd6-b1cc-4a8c-b65b-d7a4ef096307)
 
 ### Install Docker on your EC2 instance
-1.  Instaliing docker to run the nginx web server
+1.  Instaliing docker via convenience script(https://docs.docker.com/engine/install/ubuntu/#install-using-the-convenience-script)
 2.  Steps to install Docker
     ```bash
     sudo apt update 
     curl -fsSL https://get.docker.com -o get-docker.sh
     sudo sh get-docker.sh
+
 ![image](https://github.com/user-attachments/assets/651a05a8-b6f7-494a-b2a0-67bed6775d18)
 
 ---
@@ -38,6 +40,7 @@ To set up a containerized environment using Docker on an AWS EC2 instance. The c
 ### Create a Dockerfile 
 1. Create a directory to store the dockerfile and html file.
 2. The Dockerfile will define the environment and how to run the service inside the container.
+   
 ![image](https://github.com/user-attachments/assets/9edce357-4028-4728-a8e3-0f3a3f0ca9af)
 
 
