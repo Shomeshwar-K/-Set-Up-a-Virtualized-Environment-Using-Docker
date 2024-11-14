@@ -41,6 +41,9 @@ To set up a containerized environment using Docker on an AWS EC2 instance. The c
 
 ### Create a Dockerfile 
 1. Create a directory to store the dockerfile and html file.
+   ```bash
+   mkdir Docker-nginx
+   cd Docker-nginx
 2. The Dockerfile will define the environment and how to run the service inside the container.
    
 ![image](https://github.com/user-attachments/assets/9edce357-4028-4728-a8e3-0f3a3f0ca9af)
